@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gustavo Motorsport - Oficina e Peças de Moto</title>
+  <style>
+    /* VARIABLES & PALETTE */
+    :root {
+      --bg-dark: #111111;
+      --card-bg: #1f1f1f;
+      --gray-light: #2a2a2a;
+      --yellow-glow: #ffee00;
+      --text-main: #ffffff;
+      --text-muted: #cccccc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #000;
+      border-bottom: 3px solid var(--yellow-glow);
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--yellow-glow);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--yellow-glow);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200') center/cover no-repeat;
+      padding: 100px 5% 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow-glow);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      background-color: var(--yellow-glow);
+      color: #000;
+      padding: 12px 28px;
+      text-decoration: none;
+      font-weight: 800;
+      text-transform: uppercase;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #e6d700;
+      transform: translateY(-2px);
+    }
+
+    .btn-danger {
+      background-color: #ff3333;
+      color: #fff;
+    }
+
+    .btn-danger:hover {
+      background-color: #cc0000;
+    }
+
+    /* SECTIONS COMMON */
+    section {
+      padding: 60px 5%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      border-left: 5px solid var(--yellow-glow);
+      padding-left: 15px;
+    }
+
+    /* GRID & CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--gray-light);
+      border-radius: 8px;
+      padding: 25px;
+      transition: border-color 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--yellow-glow);
+    }
+
+    .card h3 {
+      color: var(--yellow-glow);
+      margin-bottom: 15px;
+    }
+
+    /* RESCUE SECTION */
+    .rescue-box {
+      background-color: var(--card-bg);
+      border: 2px dashed var(--yellow-glow);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* FORM */
+    .form-container {
+      background-color: var(--card-bg);
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--bg-dark);
+      border: 1px solid var(--gray-light);
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--yellow-glow);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      padding: 30px 5%;
+      text-align: center;
+      border-top: 1px solid var(--gray-light);
+      color: var(--text-muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">GUSTAVO <span>MOTORSPORT</span></div>
+    <nav>
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#loja">Loja</a></li>
+        <li><a href="#resgate">Resgate 24h</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Acelere com <span>Segurança e Desempenho</span></h1>
+    <p>Manutenção, peças de alta performance e socorro especializado para sua moto.</p>
+    <a href="#orcamento" class="btn">Solicitar Orçamento</a>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <h2 class="section-title">Serviços Especializados</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Manutenção Preventiva</h3>
+        <p>Troca de óleo, regulagem de válvulas, revisão de freios, suspensão e kit de relação para manter sua moto impecável.</p>
+      </div>
+      <div class="card">
+        <h3>Reparos e Diagnósticos</h3>
+        <p>Conserto de motor, alinhamento de chassis, parte elétrica, injeção eletrônica e preparação técnica.</p>
+      </div>
+      <div class="card">
+        <h3>Instalação de Acessórios</h3>
+        <p>Montagem rápida e segura de protetores, suportes, escapamentos e componentes esportivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESGATE -->
+  <section id="resgate">
+    <div class="rescue-box">
+      <h2>🚨 Resgate e Socorro 24h</h2>
+      <p style="margin: 15px 0;">Sua moto parou na rua? Nós buscamos você. Atendimento rápido para transporte seguro até a oficina.</p>
+      <a href="#orcamento" class="btn btn-danger">Chamar Resgate Agora</a>
+    </div>
+  </section>
+
+  <!-- LOJA -->
+  <section id="loja">
+    <h2 class="section-title">Peças e Acessórios</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Peças de Reposição</h3>
+        <p>Pastilhas de freio, velas Iridium, filtros de ar/óleo e kits de transmissão das melhores marcas.</p>
+      </div>
+      <div class="card">
+        <h3>Fluidos e Lubrificantes</h3>
+        <p>Óleos sintéticos e semissintéticos, fluidos de freio de alta performance e graxas para corrente.</p>
+      </div>
+      <div class="card">
+        <h3>Equipamentos</h3>
+        <p>Capacetes, luvas, capas de chuva e suportes reforçados para smartphone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section id="orcamento">
+    <h2 class="section-title">Formulário de Atendimento</h2>
+    <div class="form-container">
+      <form id="whatsappForm">
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="veiculo">Moto (Modelo/Ano)</label>
+            <input type="text" id="veiculo" required placeholder="Ex: Titan 160 / 2022">
+          </div>
+          <div class="form-group">
+            <label for="tipo">Serviço Desejado</label>
+            <select id="tipo" required>
+              <option value="Manutenção">Manutenção Preventiva</option>
+              <option value="Reparo">Reparo / Conserto</option>
+              <option value="Peças">Compra de Peças</option>
+              <option value="Resgate 24h">Resgate / Socorro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="localizacao">Sua Localização / Bairro</label>
+          <input type="text" id="localizacao" required placeholder="Ex: Centro - perto do mercado">
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Descrição do Problema ou Pedido</label>
+          <textarea id="mensagem" rows="4" placeholder="Detalhe o que você precisa..."></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;">Enviar para o WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Gustavo Motorsport</strong> - Oficina Mecânica e Peças</p>
+    <p style="font-size: 0.9rem; margin-top: 5px;">Atendimento rápido e serviço transparente.</p>
+  </footer>
+
+  <!-- SCRIPT WHATSAPP AUTOMATION -->
+  <script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // CONFIGURE O NÚMERO DO WHATSAPP DO GUSTAVO AQUI (DDD + NÚMERO, APENAS DIGITOS)
+      const numeroWhatsApp = "5511999999999";
+
+      const nome = document.getElementById('nome').value;
+      const veiculo = document.getElementById('veiculo').value;
+      const tipo = document.getElementById('tipo').value;
+      const localizacao = document.getElementById('localizacao').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      const textoMensagem = `*NOVA SOLICITAÇÃO - GUSTAVO MOTORSPORT*%0A%0A` +
+        `*Nome:* ${nome}%0A` +
+        `*Veículo:* ${veiculo}%0A` +
+        `*Serviço:* ${tipo}%0A` +
+        `*Localização:* ${localizacao}%0A` +
+        `*Detalhes:* ${mensagem}`;
+
+      const link = `https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`;
+      window.open(link, '_blank');
+    });
+  </script>
+</body>
+</html>
