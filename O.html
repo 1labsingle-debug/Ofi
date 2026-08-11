@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260811-05-f555caa","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/7949ff62d67710d5.telemetry_sdk.js" integrity="sha512-KIvXA82Di44YY/RH9/63A9MuTuavYgDFG8PfErJn7Wli4K0LAOk+coo/aPXk3+ZNL96nHh9VYD4PE+fLes+laQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lablog Delivery Bitcoin</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/0e8d3a91e1c6f495.data_sdk.js" integrity="sha512-c00oDoGjsMgluCLLEyVl3suwEkgjOGGplVFbsilUoBg4aMKNmsL3mwsc9r0dPn95qiSZyjBousQXgROkAW7p/w=="></script>
+  <script src="/_sdk/1a0e63f7a958ec3e.editing_sdk.js" integrity="sha512-lW+iibZ5vXaBl3IQ1K3ooQE1gfdDZxiO+Y7NpWdeypLOwr1WIYo3edm3nu+wyePemyM75tcU3yV7YyImK9wxMQ=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Work+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #edf5e9;
+      --muted: #a8b9aa;
+      --night: #101812;
+      --panel: #18251b;
+      --line: #39543e;
+      --acid: #d5ff42;
+      --orange: #ff914d;
+      --cyan: #5ce1e6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--ink);
+      font-family: "Work Sans", sans-serif;
+    }
+    button, input, textarea, select { font: inherit; }
+    button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visible {
+      outline: 3px solid var(--acid);
+      outline-offset: 3px;
+    }
+    .app-wrapper {
+      width: 100%;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 84% 11%, rgba(213,255,66,.13), transparent 22rem),
+        radial-gradient(circle at 8% 48%, rgba(92,225,230,.09), transparent 26rem),
+        var(--night);
+    }
+    .grid-noise {
+      background-image:
+        linear-gradient(rgba(213,255,66,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(213,255,66,.045) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+    .mono { font-family: "Space Mono", monospace; }
+    .line-card {
+      border: 1px solid var(--line);
+      background: rgba(24, 37, 27, .87);
+      box-shadow: 0 18px 45px rgba(0,0,0,.17);
+    }
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(16,24,18,.94) 0%, rgba(16,24,18,.4) 58%, rgba(16,24,18,.1) 100%);
+    }
+    .ticker {
+      border-top: 1px solid rgba(213,255,66,.28);
+      border-bottom: 1px solid rgba(213,255,66,.28);
+      background: rgba(213,255,66,.07);
+    }
+    .form-field {
+      width: 100%;
+      border: 1px solid #46654b;
+      border-radius: .75rem;
+      background: #111c14;
+      color: var(--ink);
+      padding: .78rem .9rem;
+      transition: border-color .18s, box-shadow .18s;
+    }
+    .form-field::placeholder { color: #84988a; }
+    .form-field:focus { border-color: var(--acid); box-shadow: 0 0 0 3px rgba(213,255,66,.12); outline: none; }
+    .step-number {
+      width: 2.8rem;
+      height: 2.8rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(213,255,66,.58);
+      border-radius: 50%;
+      color: var(--acid);
+      font: 700 .75rem "Space Mono", monospace;
+    }
+    .reveal { animation: rise .65s ease both; }
+    .delay-1 { animation-delay: .12s; }
+    .delay-2 { animation-delay: .24s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .profile-choice.is-active {
+      border-color: var(--acid);
+      background: rgba(213,255,66,.12);
+      color: var(--acid);
+    }
+  </style>
+  <script src="/_sdk/04cc6185e046f597.resizing_sdk.js" type="text/javascript" integrity="sha512-CiE/G92aQF0nxneFg1kdOvXih8sQ1Z2a2QI3+r/WvzJwQqH6+IyB3iL07OkJmpm3ABAaf07+FnqWny98f5sR6w=="></script>
+ </head>
+ <body data-template-id="__page-root">
+  <div class="app-wrapper grid-noise">
+   <header class="w-full border-b border-[#35513b] bg-[#101812]/90 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Navegação principal"><a href="#inicio" class="flex items-center gap-3 no-underline text-inherit"> <span class="grid h-10 w-10 place-items-center rounded-xl bg-[#d5ff42] text-[#142014]"> <i data-lucide="bike" width="22" height="22"></i> </span> <span> <strong data-template-id="brand-name" class="canva-text block font-extrabold tracking-tight"></strong> <span data-template-id="brand-tagline" class="canva-text mono block text-[9px] tracking-[.18em]"></span> </span> </a> <a data-template-id="header-cta" class="canva-button hidden rounded-xl px-4 py-2.5 text-sm font-bold no-underline sm:inline-flex" href="#cadastro"></a>
+    </nav>
+   </header>
+   <main id="inicio">
+    <section class="relative mx-auto max-w-7xl px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-16">
+     <div class="hero-image-wrap absolute bottom-0 right-0 top-0 w-full overflow-hidden opacity-80 lg:w-[68%]"><img data-template-id="hero-image" loading="lazy" class="canva-image h-full w-full object-cover">
+     </div>
+     <div class="relative max-w-3xl">
+      <div data-template-id="hero-kicker" class="canva-tag mono reveal inline-flex rounded-full border border-[#668367] bg-[#18251b] px-3 py-1.5 text-[11px] font-bold tracking-[.11em]"></div>
+      <h1 data-template-id="hero-title" class="canva-text reveal delay-1 mt-5 max-w-3xl font-extrabold leading-[.96] tracking-[-.055em]"></h1>
+      <p data-template-id="hero-description" class="canva-text reveal delay-2 mt-6 max-w-xl text-lg leading-relaxed"></p>
+      <div class="reveal delay-2 mt-8 flex flex-col gap-3 sm:flex-row"><a data-template-id="hero-merchant-cta" class="canva-button inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-bold no-underline" href="#cadastro"> <i data-lucide="store" width="18" height="18"></i> </a> <a data-template-id="hero-rider-cta" class="canva-button inline-flex items-center justify-center gap-2 rounded-xl border border-[#607a64] bg-[#18251b] px-5 py-3.5 font-bold no-underline" href="#cadastro"> <i data-lucide="motorcycle" width="18" height="18"></i> </a>
+      </div>
+      <div class="mt-10 grid max-w-2xl grid-cols-3 gap-3">
+       <div class="line-card rounded-xl p-3"><i data-lucide="zap" class="mb-2 text-[#d5ff42]" width="19" height="19"></i>
+        <p data-template-id="stat-one" class="canva-text text-sm font-bold leading-tight"></p>
+       </div>
+       <div class="line-card rounded-xl p-3"><i data-lucide="shield-check" class="mb-2 text-[#5ce1e6]" width="19" height="19"></i>
+        <p data-template-id="stat-two" class="canva-text text-sm font-bold leading-tight"></p>
+       </div>
+       <div class="line-card rounded-xl p-3"><i data-lucide="bitcoin" class="mb-2 text-[#ff914d]" width="19" height="19"></i>
+        <p data-template-id="stat-three" class="canva-text text-sm font-bold leading-tight"></p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="ticker overflow-hidden py-3">
+     <div data-template-id="ticker-text" class="canva-text mono whitespace-nowrap text-center text-xs font-bold tracking-[.14em]"></div>
+    </section>
+    <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+     <div class="max-w-2xl">
+      <p data-template-id="workflow-kicker" class="canva-text mono text-xs font-bold tracking-[.16em]"></p>
+      <h2 data-template-id="workflow-title" class="canva-text mt-3 font-extrabold tracking-[-.035em]"></h2>
+     </div>
+     <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <article class="line-card rounded-2xl p-6">
+       <div class="flex items-center justify-between">
+        <span class="step-number">01</span><i data-lucide="radio-tower" class="text-[#d5ff42]" width="25" height="25"></i>
+       </div>
+       <h3 data-template-id="step-one-title" class="canva-text mt-6 font-bold"></h3>
+       <p data-template-id="step-one-text" class="canva-text mt-2 leading-relaxed"></p>
+      </article>
+      <article class="line-card rounded-2xl p-6">
+       <div class="flex items-center justify-between">
+        <span class="step-number">02</span><i data-lucide="bell-ring" class="text-[#5ce1e6]" width="25" height="25"></i>
+       </div>
+       <h3 data-template-id="step-two-title" class="canva-text mt-6 font-bold"></h3>
+       <p data-template-id="step-two-text" class="canva-text mt-2 leading-relaxed"></p>
+      </article>
+      <article class="line-card rounded-2xl p-6">
+       <div class="flex items-center justify-between">
+        <span class="step-number">03</span><i data-lucide="package-check" class="text-[#ff914d]" width="25" height="25"></i>
+       </div>
+       <h3 data-template-id="step-three-title" class="canva-text mt-6 font-bold"></h3>
+       <p data-template-id="step-three-text" class="canva-text mt-2 leading-relaxed"></p>
+      </article>
+      <article class="line-card rounded-2xl p-6">
+       <div class="flex items-center justify-between">
+        <span class="step-number">04</span><i data-lucide="qr-code" class="text-[#d5ff42]" width="25" height="25"></i>
+       </div>
+       <h3 data-template-id="step-four-title" class="canva-text mt-6 font-bold"></h3>
+       <p data-template-id="step-four-text" class="canva-text mt-2 leading-relaxed"></p>
+      </article>
+     </div>
+    </section>
+    <section class="mx-auto max-w-7xl px-5 pb-16 lg:px-8">
+     <div data-template-id="monetization-panel" class="canva-panel overflow-hidden rounded-3xl border border-[#638166]">
+      <div class="grid lg:grid-cols-[1.1fr_.9fr]">
+       <div class="p-7 lg:p-10">
+        <p data-template-id="monetization-kicker" class="canva-text mono text-xs font-bold tracking-[.15em]"></p>
+        <h2 data-template-id="monetization-title" class="canva-text mt-3 font-extrabold tracking-[-.04em]"></h2>
+        <p data-template-id="monetization-text" class="canva-text mt-4 max-w-xl leading-relaxed"></p>
+        <div class="mt-7 flex flex-wrap gap-3"><span data-template-id="credit-tag-one" class="canva-tag rounded-full px-3 py-2 text-sm font-bold"></span> <span data-template-id="credit-tag-two" class="canva-tag rounded-full px-3 py-2 text-sm font-bold"></span>
+        </div>
+       </div>
+       <div class="border-t border-[#638166] bg-[#101812]/30 p-7 lg:border-l lg:border-t-0 lg:p-10">
+        <div class="flex items-center gap-4">
+         <div class="grid h-14 w-14 place-items-center rounded-2xl bg-[#d5ff42] text-[#142014]">
+          <i data-lucide="coins" width="28" height="28"></i>
+         </div>
+         <div>
+          <div data-template-id="credit-example-label" class="canva-text mono text-[10px] font-bold tracking-[.14em]"></div>
+          <div data-template-id="credit-example-value" class="canva-text mt-1 font-extrabold"></div>
+         </div>
+        </div>
+        <p data-template-id="credit-example-text" class="canva-text mt-6 leading-relaxed"></p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="mx-auto max-w-7xl px-5 pb-16 lg:px-8">
+     <div class="grid gap-5 lg:grid-cols-2">
+      <article class="line-card overflow-hidden rounded-3xl"><img data-template-id="merchant-image" loading="lazy" class="canva-image h-52 w-full object-cover">
+       <div class="p-7">
+        <div class="flex items-center gap-3">
+         <i data-lucide="store" class="text-[#d5ff42]" width="23" height="23">&lt;</i>
+         <h2 data-template-id="merchant-title" class="canva-text font-extrabold"></h2>
+        </div>
+        <p data-template-id="merchant-text" class="canva-text mt-3 leading-relaxed"></p>
+       </div>
+      </article>
+      <article class="line-card overflow-hidden rounded-3xl"><img data-template-id="rider-image" loading="lazy" class="canva-image h-52 w-full object-cover">
+       <div class="p-7">
+        <div class="flex items-center gap-3">
+         <i data-lucide="motorcycle" class="text-[#ff914d]" width="23" height="23"></i>
+         <h2 data-template-id="rider-title" class="canva-text font-extrabold"></h2>
+        </div>
+        <p data-template-id="rider-text" class="canva-text mt-3 leading-relaxed"></p>
+       </div>
+      </article>
+     </div>
+    </section>
+    <section id="cadastro" class="mx-auto max-w-7xl px-5 pb-20 lg:px-8">
+     <div class="grid overflow-hidden rounded-3xl border border-[#46654b] bg-[#142014] lg:grid-cols-[.8fr_1.2fr]">
+      <aside class="border-b border-[#46654b] p-7 lg:border-b-0 lg:border-r lg:p-10">
+       <p data-template-id="form-kicker" class="canva-text mono text-xs font-bold tracking-[.15em]"></p>
+       <h2 data-template-id="form-title" class="canva-text mt-3 font-extrabold tracking-[-.035em]"></h2>
+       <p data-template-id="form-description" class="canva-text mt-4 leading-relaxed"></p>
+       <div class="mt-8 space-y-3">
+        <div class="flex gap-3 text-sm">
+         <i data-lucide="map-pin" class="shrink-0 text-[#d5ff42]" width="18" height="18"></i><span data-template-id="form-benefit-one" class="canva-text"></span>
+        </div>
+        <div class="flex gap-3 text-sm">
+         <i data-lucide="clock-3" class="shrink-0 text-[#d5ff42]" width="18" height="18"></i><span data-template-id="form-benefit-two" class="canva-text"></span>
+        </div>
+        <div class="flex gap-3 text-sm">
+         <i data-lucide="badge-check" class="shrink-0 text-[#d5ff42]" width="18" height="18"></i><span data-template-id="form-benefit-three" class="canva-text"></span>
+        </div>
+       </div>
+      </aside>
+      <div class="p-7 lg:p-10">
+       <form id="interest-form" novalidate>
+        <fieldset><legend data-template-id="profile-label" class="canva-text mb-3 block text-sm font-bold"></legend>
+         <div class="grid grid-cols-2 gap-3"><button type="button" class="profile-choice is-active rounded-xl border border-[#46654b] px-4 py-3 text-left font-bold" data-profile="comerciante" aria-pressed="true"> <i data-lucide="store" class="mb-1 block" width="18" height="18"></i><span data-template-id="merchant-choice" class="canva-text"></span> </button> <button type="button" class="profile-choice rounded-xl border border-[#46654b] px-4 py-3 text-left font-bold" data-profile="motoboy" aria-pressed="false"> <i data-lucide="motorcycle" class="mb-1 block" width="18" height="18"></i><span data-template-id="rider-choice" class="canva-text"></span> </button>
+         </div>
+        </fieldset>
+        <div class="mt-5 grid gap-4 sm:grid-cols-2">
+         <div><label data-template-id="name-label" class="canva-text mb-2 block text-sm font-semibold" for="name"></label> <input id="name" class="form-field" type="text" required autocomplete="name">
+         </div>
+         <div><label data-template-id="phone-label" class="canva-text mb-2 block text-sm font-semibold" for="phone"></label> <input id="phone" class="form-field" type="tel" required autocomplete="tel">
+         </div>
+         <div><label data-template-id="vehicle-label" class="canva-text mb-2 block text-sm font-semibold" for="vehicle"></label> <input id="vehicle" class="form-field" type="text" required>
+         </div>
+         <div><label data-template-id="location-label" class="canva-text mb-2 block text-sm font-semibold" for="location"></label> <input id="location" class="form-field" type="text" required>
+         </div>
+        </div>
+        <div class="mt-4"><label data-template-id="notes-label" class="canva-text mb-2 block text-sm font-semibold" for="notes"></label> <textarea id="notes" class="form-field min-h-28 resize-y" required></textarea>
+        </div><button id="submit-button" data-template-id="submit-button" class="canva-button mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-bold" type="submit"> <i data-lucide="send" width="18" height="18"></i> </button>
+        <p id="form-status" class="mt-4 text-center text-sm" aria-live="polite"></p>
+        <p data-template-id="form-disclaimer" class="canva-text mt-3 text-center text-xs leading-relaxed"></p>
+       </form>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="border-t border-[#35513b] bg-[#0c130e]">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-7 text-sm sm:flex-row sm:items-center sm:justify-between lg:px-8">
+     <p data-template-id="footer-text" class="canva-text"></p>
+     <p data-template-id="footer-status" class="canva-text mono text-[10px] font-bold tracking-[.12em]"></p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    (() => {
+      const form = document.getElementById('interest-form');
+      const submitButton = document.getElementById('submit-button');
+      const status = document.getElementById('form-status');
+      let selectedProfile = 'comerciante';
+      let initialized = false;
+
+      function setStatus(message, type) {
+        status.textContent = message;
+        status.style.color = type === 'success' ? '#d5ff42' : type === 'error' ? '#ff914d' : '#a8b9aa';
+      }
+
+      document.querySelectorAll('[data-profile]').forEach((button) => {
+        button.addEventListener('click', () => {
+          selectedProfile = button.dataset.profile;
+          document.querySelectorAll('[data-profile]').forEach((item) => {
+            const active = item === button;
+            item.classList.toggle('is-active', active);
+            item.setAttribute('aria-pressed', String(active));
+          });
+          setStatus('', 'info');
+        });
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!initialized) {
+          setStatus('O cadastro ainda está sendo preparado. Tente novamente em instantes.', 'error');
+          return;
+        }
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.style.opacity = '.65';
+        setStatus('Enviando seu pré-cadastro...', 'info');
+
+        const record = {
+          form_type: selectedProfile,
+          name: document.getElementById('name').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          vehicle: document.getElementById('vehicle').value.trim(),
+          location: document.getElementById('location').value.trim(),
+          notes: document.getElementById('notes').value.trim(),
+          created_at: new Date().toISOString()
+        };
+
+        const result = await window.dataSdk.create(record);
+        submitButton.disabled = false;
+        submitButton.style.opacity = '1';
+
+        if (result.isOk) {
+          form.reset();
+          setStatus('Pré-cadastro recebido. Em breve a rede Lablog entrará em contato.', 'success');
+        } else {
+          setStatus('Não foi possível enviar agora. Confira sua conexão e tente novamente.', 'error');
+        }
+      });
+
+      const dataHandler = {
+        onDataChanged() {
+          // Formulário de interesse é intencionalmente somente para envio.
+        }
+      };
+
+      window.dataSdk.init(dataHandler).then((result) => {
+        if (result.isOk) {
+          initialized = true;
+        } else {
+          setStatus('O cadastro está indisponível neste momento.', 'error');
+        }
+      });
+
+      lucide.createIcons();
+    })();
+  </script>
+ </body>
+</html>
