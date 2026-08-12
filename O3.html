@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GH Motos - Oficina, Peças e Resgate 24h</title>
+  <!-- FontAwesome Icons for Social & WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* VARIABLES & PALETTE (CINZA, PRETO E VERMELHO) */
+    :root {
+      --bg-dark: #111111;
+      --card-bg: #1f1f1f;
+      --gray-light: #2a2a2a;
+      --red-accent: #e60000;
+      --red-hover: #cc0000;
+      --text-main: #ffffff;
+      --text-muted: #cccccc;
+      --whatsapp-green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #000;
+      border-bottom: 3px solid var(--red-accent);
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--red-accent);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--red-accent);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200') center/cover no-repeat;
+      padding: 100px 5% 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: var(--red-accent);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      background-color: var(--red-accent);
+      color: #fff;
+      padding: 12px 28px;
+      text-decoration: none;
+      font-weight: 800;
+      text-transform: uppercase;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--red-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-danger {
+      background-color: var(--red-accent);
+      color: #fff;
+    }
+
+    .btn-danger:hover {
+      background-color: var(--red-hover);
+    }
+
+    /* SECTIONS COMMON */
+    section {
+      padding: 60px 5%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      border-left: 5px solid var(--red-accent);
+      padding-left: 15px;
+    }
+
+    /* GRID & CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--gray-light);
+      border-radius: 8px;
+      padding: 25px;
+      transition: border-color 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--red-accent);
+    }
+
+    .card h3 {
+      color: var(--red-accent);
+      margin-bottom: 15px;
+    }
+
+    /* ANTES E DEPOIS */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--gray-light);
+    }
+
+    .gallery-images {
+      display: flex;
+    }
+
+    .gallery-images div {
+      flex: 1;
+      position: relative;
+    }
+
+    .gallery-images img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--red-accent);
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .gallery-desc {
+      padding: 15px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* MARCAS ATENDIDAS */
+    .brands {
+      background-color: #000;
+      text-align: center;
+      padding: 30px 5%;
+      border-top: 1px solid var(--gray-light);
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .brands-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 15px;
+    }
+
+    .brands-list span {
+      color: var(--red-accent);
+    }
+
+    /* RESCUE SECTION */
+    .rescue-box {
+      background-color: var(--card-bg);
+      border: 2px dashed var(--red-accent);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background-color: var(--card-bg);
+      margin-bottom: 15px;
+      border-radius: 6px;
+      padding: 20px;
+      border: 1px solid var(--gray-light);
+    }
+
+    .faq-item h3 {
+      color: var(--red-accent);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    /* FORM & BADGE */
+    .badge-zero-cost {
+      text-align: center;
+      background: rgba(230, 0, 0, 0.1);
+      border: 1px solid var(--red-accent);
+      color: var(--red-accent);
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      background-color: var(--card-bg);
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--bg-dark);
+      border: 1px solid var(--gray-light);
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--red-accent);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    /* FLOATING WHATSAPP BUTTON */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--whatsapp-green);
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      z-index: 2000;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      padding: 40px 5% 20px;
+      border-top: 1px solid var(--gray-light);
+      color: var(--text-muted);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .footer-col h4 {
+      color: var(--red-accent);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-light);
+      font-size: 0.85rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">GH <span>MOTOS</span></div>
+    <nav>
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Projetos</a></li>
+        <li><a href="#loja">Loja</a></li>
+        <li><a href="#resgate">Resgate 24h</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Acelere com <span>Segurança e Desempenho</span></h1>
+    <p>Manutenção, peças de alta performance e socorro especializado para sua moto.</p>
+    <a href="#orcamento" class="btn">Solicitar Orçamento Grátis</a>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <h2 class="section-title">Serviços Especializados</h2>
+    <div class="grid">
+      <div class="card">
+        <h3><i class="fa-solid fa-wrench"></i> Manutenção Preventiva</h3>
+        <p>Troca de óleo, regulagem de válvulas, revisão de freios, suspensão e kit de relação para manter sua moto impecável.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-gears"></i> Reparos e Diagnósticos</h3>
+        <p>Conserto de motor, alinhamento de chassis, parte elétrica, injeção eletrônica e preparação técnica.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-motorcycle"></i> Instalação de Acessórios</h3>
+        <p>Montagem rápida e segura de protetores, suportes, escapamentos e componentes esportivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA / ANTES E DEPOIS -->
+  <section id="galeria">
+    <h2 class="section-title">Nossos Trabalhos (Antes & Depois)</h2>
+    <div class="gallery-grid">
+      
+      <div class="gallery-item">
+        <div class="gallery-images">
+          <div>
+            <span class="badge-tag">Antes</span>
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=400" alt="Antes">
+          </div>
+          <div>
+            <span class="badge-tag">Depois</span>
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=400" alt="Depois">
+          </div>
+        </div>
+        <div class="gallery-desc">
+          <strong>Restauração Completa do Motor e Pintura</strong>
+          <p>Revisão interna de cilindros e revitalização estética da pintura e cromados.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-images">
+          <div>
+            <span class="badge-tag">Antes</span>
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=400" alt="Antes">
+          </div>
+          <div>
+            <span class="badge-tag">Depois</span>
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=400" alt="Depois">
+          </div>
+        </div>
+        <div class="gallery-desc">
+          <strong>Ajuste de Relação e Freios de Alta Performance</strong>
+          <p>Substituição de pastilhas gastas e instalação de kit transmissão reforçado.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MARCAS ATENDIDAS -->
+  <div class="brands">
+    <p>TRABALHAMOS COM AS MELHORES MARCAS DO MERCADO</p>
+    <div class="brands-list">
+      <span>HONDA</span> • <span>YAMAHA</span> • <span>KAWASAKI</span> • <span>BMW</span> • <span>SUZUKI</span> • <span>MOTUL</span>
+    </div>
+  </div>
+
+  <!-- RESGATE -->
+  <section id="resgate">
+    <div class="rescue-box">
+      <h2>🚨 Resgate e Socorro 24h</h2>
+      <p style="margin: 15px 0;">Sua moto parou na rua? Nós buscamos você. Atendimento rápido para transporte seguro até a oficina.</p>
+      <a href="#orcamento" class="btn btn-danger">Chamar Resgate Agora</a>
+    </div>
+  </section>
+
+  <!-- LOJA -->
+  <section id="loja">
+    <h2 class="section-title">Peças e Acessórios</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Peças de Reposição</h3>
+        <p>Pastilhas de freio, velas Iridium, filtros de ar/óleo e kits de transmissão das melhores marcas.</p>
+      </div>
+      <div class="card">
+        <h3>Fluidos e Lubrificantes</h3>
+        <p>Óleos sintéticos e semissintéticos, fluidos de freio de alta performance e graxas para corrente.</p>
+      </div>
+      <div class="card">
+        <h3>Equipamentos</h3>
+        <p>Capacetes, luvas, capas de chuva e suportes reforçados para smartphone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <h2 class="section-title">O que dizem nossos clientes</h2>
+    <div class="grid">
+      <div class="card">
+        <p><i>"A equipe da GH Motos resolveu um problema elétrico na minha moto que nenhuma outra oficina conseguiu achar. Atendimento top!"</i></p>
+        <p style="margin-top: 15px; color: var(--red-accent); font-weight: bold;">— Marcos Silva</p>
+      </div>
+      <div class="card">
+        <p><i>"Precisei do resgate no final de semana e me atenderam muito rápido. Serviço justo e com transparência."</i></p>
+        <p style="margin-top: 15px; color: var(--red-accent); font-weight: bold;">— Rodrigo Oliveira</p>
+      </div>
+      <div class="card">
+        <p><i>"Faço a revisão preventiva da minha moto sempre na GH Motos. Preço honesto e peças de qualidade."</i></p>
+        <p style="margin-top: 15px; color: var(--red-accent); font-weight: bold;">— André Santos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / PERGUNTAS FREQUENTES -->
+  <section id="faq">
+    <h2 class="section-title">Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <h3>Com qual frequência devo trocar o óleo da minha moto?</h3>
+      <p>Depende do modelo e do tipo de óleo (mineral, semissintético ou sintético). Em geral, recomenda-se a troca entre 1.000km e 3.000km rodados.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Vocês atendem todas as cilindradas?</h3>
+      <p>Sim! Atendemos desde scooters e motos de baixa cilindrada (100cc a 160cc) até motos de alta cilindrada (600cc+).</p>
+    </div>
+    <div class="faq-item">
+      <h3>Como funciona a cobrança do resgate?</h3>
+      <p>O valor do resgate varia de acordo com a distância/localidade. Você pode enviar sua localização pelo formulário para receber a cotação exata.</p>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section id="orcamento">
+    <h2 class="section-title">Formulário de Atendimento</h2>
+    <div class="form-container">
+      
+      <div class="badge-zero-cost">
+        <i class="fa-solid fa-circle-check"></i> Orçamento Sem Compromisso!
+      </div>
+
+      <form id="whatsappForm">
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="veiculo">Moto (Modelo/Ano)</label>
+            <input type="text" id="veiculo" required placeholder="Ex: Titan 160 / 2022">
+          </div>
+          <div class="form-group">
+            <label for="tipo">Serviço Desejado</label>
+            <select id="tipo" required>
+              <option value="Manutenção">Manutenção Preventiva</option>
+              <option value="Reparo">Reparo / Conserto</option>
+              <option value="Peças">Compra de Peças</option>
+              <option value="Resgate 24h">Resgate / Socorro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="localizacao">Sua Localização / Bairro</label>
+          <input type="text" id="localizacao" required placeholder="Ex: Centro - perto do mercado">
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Descrição do Problema ou Pedido</label>
+          <textarea id="mensagem" rows="4" placeholder="Detalhe o que você precisa..."></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;">Enviar para o WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>GH Motos</h4>
+        <p>Especialistas em manutenção, reparos e preparação de motocicletas.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Horário de Funcionamento</h4>
+        <p>Segunda a Sexta: 08:00 às 18:00</p>
+        <p>Sábado: 08:00 às 12:00</p>
+        <p><strong>Resgate 24h Disponível</strong></p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato e Endereço</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Av. Principal, 1000 - Centro</p>
+        <p><i class="fa-solid fa-phone"></i> (11) 97198-9683</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GH Motos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/5511971989683?text=Olá!%20Gostaria%20de%20informações%20sobre%20os%20serviços." class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPT WHATSAPP AUTOMATION -->
+  <script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // NÚMERO DO WHATSAPP DA GH MOTOS
+      const numeroWhatsApp = "5511971989683";
+
+      const nome = document.getElementById('nome').value;
+      const veiculo = document.getElementById('veiculo').value;
+      const tipo = document.getElementById('tipo').value;
+      const localizacao = document.getElementById('localizacao').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      const textoMensagem = `*NOVA SOLICITAÇÃO - GH MOTOS*%0A%0A` +
+        `*Nome:* ${nome}%0A` +
+        `*Veículo:* ${veiculo}%0A` +
+        `*Serviço:* ${tipo}%0A` +
+        `*Localização:* ${localizacao}%0A` +
+        `*Detalhes:* ${mensagem}`;
+
+      const link = `https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`;
+      window.open(link, '_blank');
+    });
+  </script>
+</body>
+</html>
